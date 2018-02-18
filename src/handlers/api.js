@@ -1,8 +1,5 @@
-const cheer = {
-  name: 'The Politician',
-  description: 'Pat yourself on the back.'
-}
+import axios from 'axios'
 
 export const getCheer = () => {
-  return new Promise(resolve => resolve(cheer))
+  return axios.get('/api/v0/cheer/random')
 }

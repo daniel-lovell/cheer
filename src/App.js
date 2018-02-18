@@ -15,9 +15,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getCheer().then(cheer => {
-      console.log(cheer)
-      this.setState({cheer})
+    getCheer().then(response => {
+      this.setState({cheer: response.data})
     })
   }
 
