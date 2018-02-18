@@ -11,8 +11,8 @@ const Cheer = ({name, description}) => {
 }
 
 Cheer.defaultProps = {
-  name: 'Missing Cheer Name',
-  description: 'Missing Cheer Description'
+  name: 'Missing Cheer',
+  description: ''
 }
 
 Cheer.propTypes = {
