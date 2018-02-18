@@ -5,9 +5,10 @@ const cheer = {
 
 module.exports  = {
   getCheer: function(req, res) {
-    console.log(req.params)
     if (req.params.id === 'random') {
-      res.status(200).json(cheer)
+      req.app.get('db').getRandomCheer().then(response => {
+        res.status(200).json(response[0])
+      })
     } else {
       res.status(404).end()
     }

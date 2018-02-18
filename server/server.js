@@ -42,10 +42,10 @@ if(process.env.NODE_ENV === 'development') {
 // }
 // app.use(session(sess))
 
-// // massive
-// massive(process.env.DB_CONNECTION_STRING).then(db => {
-//   app.set('db', db)
-// }).catch(err => console.error(err))
+// massive
+massive(process.env.DB_CONNECTION_STRING).then(db => {
+  app.set('db', db)
+}).catch(err => console.error(err))
 
 app.get('/api/v0/cheer/:id', handlers.getCheer)
 

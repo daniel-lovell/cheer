@@ -1,0 +1,1 @@
+SELECT name, description FROM cheers ORDER BY random() LIMIT 1;
