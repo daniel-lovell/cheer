@@ -12,9 +12,15 @@ class App extends Component {
         description: ''
       }
     }
+
+    this.getCheer = this.getCheer.bind(this)
   }
 
   componentDidMount() {
+    this.getCheer()
+  }
+
+  getCheer() {
     getCheer().then(response => {
       this.setState({cheer: response.data})
     })
@@ -25,8 +31,8 @@ class App extends Component {
       <Fragment>
         <header>Cheer!</header>
         <main>
-          <button>New Cheer</button>
           <Cheer name={this.state.cheer.name} description={this.state.cheer.description} />
+          <button onClick={this.getCheer}>New Cheer</button>
         </main>
       </Fragment>
     );
