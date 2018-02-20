@@ -1,9 +1,10 @@
 import React from 'react'
 import propTypes from 'prop-types'
+import './Cheer.css'
 
 const Cheer = ({name, description}) => {
   return (
-    <article>
+    <article className="cheer">
       <h1>{name}</h1>
       <p>{description}</p>
     </article>
@@ -11,7 +12,7 @@ const Cheer = ({name, description}) => {
 }
 
 Cheer.defaultProps = {
-  name: 'Missing Cheer',
+  name: 'Error: Missing Cheer',
   description: ''
 }
 

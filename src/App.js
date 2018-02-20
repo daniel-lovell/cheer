@@ -8,6 +8,7 @@ class App extends Component {
     super()
     this.state = {
       cheer: {
+        id: 0,
         name: 'loading cheer ...',
         description: ''
       }
@@ -21,15 +22,17 @@ class App extends Component {
   }
 
   getCheer() {
-    getCheer().then(response => {
-      this.setState({cheer: response.data})
+    getCheer(this.state.cheer.id).then(cheer => {
+      this.setState({cheer})
     })
   }
 
   render() {
     return (
       <Fragment>
-        <header>Cheer!</header>
+        <header>
+          <h1>Cheer!</h1>
+        </header>
         <main>
           <Cheer name={this.state.cheer.name} description={this.state.cheer.description} />
           <button onClick={this.getCheer}>New Cheer</button>

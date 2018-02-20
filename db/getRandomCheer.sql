@@ -1,1 +1,1 @@
-SELECT name, description FROM cheers ORDER BY random() LIMIT 1;
+SELECT * FROM cheers WHERE id != $1 ORDER BY random() LIMIT 1;
