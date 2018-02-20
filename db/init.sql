@@ -15,7 +15,7 @@ INSERT INTO cheers (name, description)
 VALUES
 ('The Politician', 'Pat yourself on the back.'),
 ('The Almost', 'Start to do a single clap of your hand, but miss at the last moment.'),
-('The Bacon', 'Slam a human-sized frying pan onto the floor, hop in it, and start sizzling like bacon (make sizzle noises and wiggle body)'),
+('The Bacon', 'Slam a human-sized frying pan onto the floor, hop in it, and start sizzling like bacon (make sizzle noises and wiggle body).'),
 ('The Big Hand', 'Hold one hand fingers open as much as possible in the air.'),
 ('The Round of Applause', 'Clap while moving the claps around and imaginary circle.')
 ;

@@ -1,4 +1,5 @@
 require('dotenv').config()
+const path = require('path')
 const express = require('express')
 const helmet = require('helmet')
 const session = require('express-session')
@@ -47,6 +48,12 @@ massive(process.env.DB_CONNECTION_STRING).then(db => {
   app.set('db', db)
 }).catch(err => console.error(err))
 
+app.use(express.static(`${__dirname}/../build`))
+
 app.get('/api/v0/cheer/:id', handlers.getCheer)
+
+app.get('*', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 
