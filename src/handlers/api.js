@@ -1,5 +1,5 @@
 import axios from 'axios'
 
-export const getCheer = (id) => {
-  return axios.get(`/api/v0/cheer/random?id=${id}`).then(response => response.data)
+export const getCheer = (id, noRepeats) => {
+  return axios.get(`/api/v0/cheer/random?id=${id}&noRepeats=${noRepeats}`).then(response => response.data)
 }

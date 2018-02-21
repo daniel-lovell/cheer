@@ -7,6 +7,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      noRepeats: true,
       cheer: {
         id: 0,
         name: 'loading cheer ...',
@@ -22,9 +23,9 @@ class App extends Component {
   }
 
   getCheer() {
-    getCheer(this.state.cheer.id).then(cheer => {
+    getCheer(this.state.cheer.id, this.state.noRepeats).then(cheer => {
       this.setState({cheer})
-    })
+    }).catch(err => console.error('getCheer', err))
   }
 
   render() {
@@ -36,6 +37,15 @@ class App extends Component {
         <main>
           <Cheer name={this.state.cheer.name} description={this.state.cheer.description} />
           <button onClick={this.getCheer}>New Cheer</button>
+          <label>
+            <input
+              type="checkbox"
+              name="noRepeats"
+              checked={this.state.noRepeats}
+              onChange={() => this.setState((prevState) => ({noRepeats: !prevState.noRepeats}))}
+            />
+            No Repeats
+          </label>
         </main>
       </Fragment>
     );

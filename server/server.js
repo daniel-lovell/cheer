@@ -27,21 +27,21 @@ if(process.env.NODE_ENV === 'development') {
 
 
 // sessions
-// const sess = {
-//   secret: process.env.SESSION_SECRET,
-//   name: 'session',
-//   cookie: {
-//     maxAge: 60 * 60 * 1000 // one hour
-//   },
-//   resave: false,
-//   saveUninitialized: false
-// }
-// if (process.env.NODE_ENV === 'production') {
-//   app.set('trust proxy', 1)
-//   sess.cookie.secure = true
-//   sess.cookie.domain = process.env.SERVER_DOMAIN
-// }
-// app.use(session(sess))
+const sess = {
+  secret: process.env.SESSION_SECRET,
+  name: 'session',
+  cookie: {
+    maxAge: 60 * 60 * 1000 // one hour
+  },
+  resave: false,
+  saveUninitialized: false
+}
+if (process.env.NODE_ENV === 'production') {
+  app.set('trust proxy', 1)
+  sess.cookie.secure = true
+  sess.cookie.domain = process.env.SERVER_DOMAIN
+}
+app.use(session(sess))
 
 // massive
 massive(process.env.DB_CONNECTION_STRING).then(db => {
